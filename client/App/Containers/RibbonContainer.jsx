@@ -11,12 +11,8 @@ class RibbonContainer extends React.Component{
   
   render(){
       return(
+        // If user is signed in, hide signup/login buttons. 
           <div className='ribboncontainer'>
-          {/* <h1>username</h1>
-            <input className="usertext" type="text" />
-          <h2>password</h2>
-          <input className="classtext"type="text" /> */}
-
           {this.props.loginFail ? <SignupButton /> : null}
   
           {this.props.loginFail ? <LoginButton /> : null}
