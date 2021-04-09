@@ -9,8 +9,9 @@ sessionController.verifyLogin = (req, res, next) => {
   if (!Object.prototype.hasOwnProperty.call(req.cookies,'ssid')){
     // if cookie not found, 
     res.locals.reactToken = false;
+    const reactTokenErr = 'Session expired, please log in again'
     return next();
-
+      message: reactTokenErr
   } else {
     // if cookie is found, get the session 
     Session.findOne({cookieId: req.cookies.ssid}, (err,session) => {

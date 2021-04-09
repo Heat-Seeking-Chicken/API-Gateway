@@ -7,14 +7,19 @@ class MainPage extends React.Component{
     super(props)
     this.state = {
       // showModal : false,
+      userState : false,
     }
+  }
+
+  toggleLogin(){
+    this.setState({userState: true})
   }
   
   render(){
       return(
           <div className='mainpage'>
           <div className='header'>
-              <RibbonContainer loginFail={this.props.loginFail}/>
+              <RibbonContainer toggleLogin = {() => {this.toggleLogin()}} userState={this.state.userState}/>
           </div>
         <div className='title'>
           <h2>API Gateway</h2>

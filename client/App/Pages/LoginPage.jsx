@@ -15,12 +15,12 @@ const LoginPage = (props) => {
     history.push(path);
   }
 
-  const responseGoogle = (response) => {
-    console.log(response);
-  }
+  // const responseGoogle = (response) => {
+  //   console.log(response);
+  // }
 
-  const onSuccess = response => console.log(response);
-  const onFailure = response => console.error(response);
+  // const onSuccess = response => console.log(response);
+  // const onFailure = response => console.error(response);
 
   return(
     <div className='loginpage'>
@@ -32,7 +32,7 @@ const LoginPage = (props) => {
               <button className="login" onClick={() => {props.loginFcn(), routeChange()}}>
                   <i className="fas fa-sign-in-alt" >Login bitch</i>
               </button>
-              <GoogleLogin
+              {/* <GoogleLogin
               clientId="569588449540-2nrlh84tujesskj5q3po2n7kmmfvfg3u.apps.googleusercontent.com"
               buttonText="Login"
               onSuccess={responseGoogle}
@@ -41,7 +41,7 @@ const LoginPage = (props) => {
               />
               <LoginGithub clientId='3149f5abc472c1305402'
               onSuccess={onSuccess}
-              onFailure={onFailure}/>
+              onFailure={onFailure}/> */}
       </div>
     </div>
   )

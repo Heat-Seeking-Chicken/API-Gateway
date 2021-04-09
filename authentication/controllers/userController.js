@@ -11,13 +11,15 @@ userController.createUser = (req, res, next) => {
     if (err) {
 
       res.locals.signupFail = true;
-      console.log(err)
+      console.log('herherehere', err);
       // console.log(err)
+      const dupUserErr = 'Username is already taken';
       return next({
-        log: 'userController.createUser',
-        message: { err: 'userController.createUser: An error occurred' }
+        // log: 'userController.createUser',
+        message: dupUserErr
       });
     } else {
+      console.log('User Successfully Created')
       res.locals.id = user._id.toString();
       return next();
     }
@@ -44,7 +46,10 @@ userController.verifyUser = (req, res, next) => {
       // redirect if incorrect pw or nonexistent user
       res.locals.loginFail = true;
       // return res.status(200).send('/signupfail'); 
-      return next();
+      const noUserRecErr = 'User does not exist'
+      return next({
+        message: noUserRecErr
+      });
     }
     else {
       // check that password is correctly matching hashed password

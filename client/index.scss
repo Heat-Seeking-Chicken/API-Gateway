@@ -16,6 +16,7 @@ body{
     
 }
 
+
 .form{
     position: relative;
     width: 80%;
@@ -106,13 +107,13 @@ body{
     left: 50%;
 }
 
-#signup-modal-title {
-
+#modalForm {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
 }
 
-#signup-modal-description {
-
-}
 
 .wunderpuss{
     height: 20rem;

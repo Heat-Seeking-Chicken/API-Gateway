@@ -26,7 +26,7 @@ apiController.googleBooks = (req, res, next) => {
 
         return next();
     })
-    .catch(err => console.log(err))
+    .catch(err => alert('Unable to retrieve requested information, please try a new search'))
 } 
 
 apiController.newYorkTimes = (req, res, next) => {
@@ -55,7 +55,7 @@ apiController.newYorkTimes = (req, res, next) => {
         }
         return next();
     })
-    .catch(err => console.log(err))
+    .catch(err => alert('Unable to retrieve requested information, please try a new search'))
 } 
 
 module.exports = apiController

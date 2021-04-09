@@ -16,46 +16,46 @@ class App extends React.Component{
             'redirect': null,
         }
 
-        this.doLogIn = this.doLogIn.bind(this)
+        // this.doLogIn = this.doLogIn.bind(this)
     }
 
 
-     // invoked when user presses login button
-  doLogIn() {
+  // invoked when user presses login button
+  // doLogIn() {
       
-    let userStr = document.getElementById('username').value;
-    let pwStr = document.getElementById('password').value;
+  //   let userStr = document.getElementById('username').value;
+  //   let pwStr = document.getElementById('password').value;
 
-    // debugging
-    console.log('Login Initiated.')
-    console.log(`Username: ${userStr}, Password: ${pwStr}`)
+  //   // debugging
+  //   console.log('Login Initiated.')
+  //   console.log(`Username: ${userStr}, Password: ${pwStr}`)
 
-    // get ride of whitespaces from login
-    userStr.replace(/\s+$/, '');
+  //   // get ride of whitespaces from login
+  //   userStr.replace(/\s+$/, '');
     
-    const sendObj = {'username':userStr, 'password': pwStr}
-    let requestBody = {
-      method: 'POST',
-      headers: {
+  //   const sendObj = {'username':userStr, 'password': pwStr}
+  //   let requestBody = {
+  //     method: 'POST',
+  //     headers: {
       
-        'Content-Type': 'application/json'
-      },
+  //       'Content-Type': 'application/json'
+  //     },
 
-      body: JSON.stringify(sendObj)
-    }
+  //     body: JSON.stringify(sendObj)
+  //   }
   
     // ping the backend with the 
-    fetch('/login', requestBody) 
-      .then(response => response.json())
-      .then(data =>{
-        // based on returned login state, change the ribbon\
-        console.log('loginFail state: ', data.loginFail)
-        this.setState({'loginFail': data.loginFail})
-        history.push(path)
+    // fetch('/login', requestBody) 
+    //   .then(response => response.json())
+    //   .then(data =>{
+    //     // based on returned login state, change the ribbon\
+    //     console.log('loginFail state: ', data.loginFail)
+    //     this.setState({'loginFail': data.loginFail})
+    //     history.push(path)
 
-      })
-      .catch(err => console.log(err))
-    }
+    //   })
+    //   .catch(err => console.log(err))
+    // }
 
     render(){
         if (this.state.redirect) {
