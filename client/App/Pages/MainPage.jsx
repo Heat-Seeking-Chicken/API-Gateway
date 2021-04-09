@@ -27,7 +27,7 @@ class MainPage extends React.Component{
         <div className='body'>
             <SearchContainer/>
         </div>
-          </div> 
+        </div> 
       // eslint-disable-next-line semi
       )
   }

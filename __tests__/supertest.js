@@ -6,7 +6,7 @@ const server = 'http://localhost:3000';
 /**
  * Read the docs! https://www.npmjs.com/package/supertest
  */
-describe('Route integration', () => {
+xdescribe('Route integration', () => {
   describe('/', () => {
     describe('GET', () => {
       // Note that we return the evaluation of `request` here! It evaluates to

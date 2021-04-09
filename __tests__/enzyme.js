@@ -7,7 +7,7 @@ import toJson from 'enzyme-to-json';
 // shallow render and traverse the shallow rendered tree. 
 import LoginButton from '../client/App/components/LoginButton';
 import SearchBar from '../client/App/components/SearchBar';
-import SearchResults from '../client/App/components/SearchResults';
+import SearchResult from '../client/App/components/SearchResult';
 import SignupButton from '../client/App/components/SignupButton';
 
 
@@ -15,7 +15,7 @@ import SignupButton from '../client/App/components/SignupButton';
 configure({ adapter: new Adapter() });
 
 describe('React unit tests', () => {
-  describe('LoginButton', () => {
+  xdescribe('LoginButton', () => {
     let wrapper;
     const props = {
       
@@ -31,6 +31,38 @@ describe('React unit tests', () => {
       expect(wrapper.find('button')).toHaveLength(1);
     });
   });
+
+  describe('SearchResult', () => {
+    let wrapper;
+    const props = {
+      timeout: 5,
+      book : {
+        title: 'Lord of the Rings',
+        author: 'J. R. R. Tolkien',
+        selfLink: 'www.fakelink.com'
+      },
+    }
+
+    beforeAll(() => {
+      wrapper = shallow(<SearchResult {...props} />)
+    })
+
+    it('Renders a <button> tag with an onClick attribute', () => {
+
+      expect(wrapper.find('button').type()).toEqual('button')
+      
+// Mo was working ehre
+
+
+    })
+
+
+
+
+
+
+
+  })
 
 
   // TODO: Test the following: 
