@@ -5,7 +5,8 @@ const rules = [{
   loader: 'babel-loader',
   exclude: /node_modules/,
   options: {
-    presets: ['@babel/react', '@babel/env']
+    presets: ['@babel/preset-env', '@babel/preset-react','@babel/preset-flow'],
+    plugins: ['@babel/plugin-syntax-jsx', '@babel/plugin-transform-runtime'],
     }
   },
   {

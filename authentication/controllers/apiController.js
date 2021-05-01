@@ -21,12 +21,15 @@ apiController.googleBooks = (req, res, next) => {
                 selfLink: data.items[i].selfLink,     
                 author: data.items[i].volumeInfo.authors[0],   
               }
-            res.locals.data.push(bookInfo);
+            res.locals.data.push({
+                api: 'Google Books',
+                apiData: data.items[i],
+                formattedData: bookInfo});
         }
 
         return next();
     })
-    .catch(err => console.log(err))
+    .catch(err => alert('Unable to retrieve requested information, please try a new search'))
 } 
 
 apiController.newYorkTimes = (req, res, next) => {
@@ -51,11 +54,14 @@ apiController.newYorkTimes = (req, res, next) => {
                 selfLink: selfLink,     
                 author: data.results[i].book_author,   
               }
-            res.locals.data.push(bookInfo);
+            res.locals.data.push({
+                api: 'New York Times Books',
+                apiData: data.results[i],
+                formattedData: bookInfo});
         }
         return next();
     })
-    .catch(err => console.log(err))
+    .catch(err => alert('Unable to retrieve requested information, please try a new search'))
 } 
 
 module.exports = apiController

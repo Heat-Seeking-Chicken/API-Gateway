@@ -7,8 +7,9 @@ const bcrypt = require('bcryptjs');
 const SALT_WORK_FACTOR = 10;
 
 const userSchema = new Schema({
-  username: {type: String, required: true, unique: true},
-  password: {type: String, required: true}
+  username: {type: String, required: true, unique: true },
+  password: {type: String, required: true },
+  favorites: Array
 })
 
 // check correct implementation of bcrypt here

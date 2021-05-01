@@ -1,18 +1,36 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    padding: 0;
-    margin: 0;
-    min-height: 100vh;
-
+.codeSnippet {
+    display: flex;
+    flex: 1;
+    border-color: black;
+    border-style: dashed;
+    border-width: 2px;
+    border-radius: 20;
+    background-color: #0a1f40;
+    color: white;
+    margin: 5;
+    width: 65vw;
+    max-height: 65vh;
+    overflow: scroll;
 }
 
 .header{
-    background-color: pink;
+    background-color: white;
+    padding: 2em;
     
+}
+
+
+.form{
+    position: relative;
+    width: 80%;
+    left: 3rem;
+    padding: 0.5rem;
 }
 
 .ribboncontainer{
@@ -50,9 +68,7 @@ body{
 
 .login:hover {
     background-color:pink;
-    
 }
-
 
 
 .signuppage{
@@ -72,6 +88,7 @@ body{
     border-radius: 1rem;
     background-color: white;
     box-shadow: 5px 3px 3px black;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .loginpage{
@@ -93,12 +110,18 @@ body{
     box-shadow: 5px 3px 3px black;
 }
 
-.form{
-    position: relative;
-    width: 80%;
-    left: 3rem;
-    padding: 0.5rem;
+.modalStyle {
+    top: 50%;
+    left: 50%;
 }
+
+#modalForm {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
 
 .wunderpuss{
     height: 20rem;
@@ -112,25 +135,23 @@ body{
     background-color: white;
     border-color: navy;
     border-radius:5em;
-    /* padding: 5px 7px;
-    height:22px; */
     width: 80px;
     color:navy;
-    /* margin-top:8px; */
     height: 2em;
-    margin-left: 5px;
 }
+
+.search:hover {
+    color:pink;
+ }
 
 .searchBar {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-left: 10;
+
 }
 
-.search:hover {
-   border: none;
-   color:pink;
-}
+
 .ribboncontainer h1 {
     font-size: 25px;
 }
@@ -145,10 +166,30 @@ body{
 .ribboncontainer h2:hover {
     color: navy;
 }
+
+.resultButton {
+    padding: 1em;
+    margin: 1em;
+    border-style: solid;
+    border-width: 2;
+    background-color: #0c5ea6;
+    box-shadow: 1px 1px 1px 1px;
+    border-radius: 0.5em;
+}
+
+.resultButton:hover {
+    background-color: #094274;
+}
+
+.resultButton:focus {
+    background-color: #06335bfc;
+}
+
 .usertext {
     height : 32px;
     margin-top:4px;
 }
+
 .classtext {
     height : 32px;
     margin-top:4px;
@@ -161,13 +202,12 @@ margin-left:600px; */
 
 
 }
+
 .searchcontainer {
     display:flex;
+    flex: 1;
     flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    /* margin-top:5em; */
-
+    margin-top:1em; 
 }
 
 #searchvalues {
@@ -179,35 +219,7 @@ margin-left:600px; */
     display:flex;
     justify-content: center;
     align-content: center;
-    margin-top:1em;
     font-size:40px;
-    
-}
-.searchresults {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left: 15em;
-    margin-right: 15em;
-    /* display:flex;
-    justify-content: center;
-    align-content: center; */
-    margin-top:2em;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    flex-direction: column;
-
+    color: rgba(16, 16, 63, 0.913);
 }
 
-.dataInformation {
-    font-size: 12px;
-    margin-left: 5em;
-    
-}
-
-.table {
-    border-color: navy;
-    border-style: solid;
-    border-width: 2px;
-    padding: 2em;
-
-}
